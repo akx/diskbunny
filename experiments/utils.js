@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+import prettySize from 'prettysize';
 
 export function printProgress(scanner) {
   console.log(`Scan duration: ${scanner.getScanDuration()} sec.`);
@@ -11,5 +12,5 @@ export function printProgress(scanner) {
       console.log(`     ${scanner.getBusyPaths().sort().join('; ')}`);
     }
   }
-  console.log(`Total size: ${scanner.getFileSize()} bytes`);
+  console.log(`Total size: ${prettySize(scanner.getFileSize())}`);
 }
