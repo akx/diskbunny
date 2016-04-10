@@ -1,4 +1,5 @@
 require('babel-register');
-var printTree = require('./experiments').printTree;
-var paths = process.argv.slice(2);
-printTree(paths);
+var experiment = process.argv[2];
+var func = require('./experiments/' + experiment).default;
+var paths = process.argv.slice(3);
+func(paths);
